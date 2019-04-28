@@ -1,35 +1,23 @@
-<section>
-	{% for post in postslist | reverse %}
-		<article{% if post.url == url %} data-current="current item"{% endif %}>
-			<h3>
-				<a href="{{ post.url | url }}">
-					{% if post.data.title %}
-						{{ post.data.title }}
-					{% else %}
-						Untitled
-					{% endif %}
-				</a>
-			</h3>
-			{% if post.data.summary %}
-				<p>
-					{{ post.data.summary }}
-				</p>
-			{% endif %}
-			<p>
-				<time datetime="{{ post.date | machineDate }}">
-					<small>{{ post.date | readableDate }} by {{ metadata.author.name }}</small>
-				</time>
-			</p>
-			{% if post.data.tags %}
-				<p>
-					{% for tag in post.data.tags %}
-		  			{%- if tag != "post" -%}
-		  				{% set tagUrl %}/tags/{{ tag }}/{% endset %}
-		  			<a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-		  			{%- endif -%}
-					{% endfor %}
-				</p>
-			{% endif %}
-		</article>
-	{% endfor %}
+<section class="posts">
+  {% for post in postslist | reverse %}
+    <article class="post">
+      <a class="post__header" href="{{ post.url | url }}">
+        <h3 class="post__title">
+          {% if post.data.title %}
+            {{ post.data.title }}
+          {% else %}
+            Untitled
+          {% endif %}
+        </h3>
+        <time class="post__date" datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
+      </a>
+
+      {% if post.data.summary %}
+        <div class="post__content post__content--summary">
+          <p>{{ post.data.summary }}</p>
+          <p><a class="post__readMore" href="{{ post.url | url }}">Read more...</a></p>
+        </div>
+      {% endif %}
+    </article>
+  {% endfor %}
 </section>

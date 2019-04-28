@@ -1,0 +1,47 @@
+<div class="sidebar">
+  <a href="/" class="header">
+    <img class="header__logo" src="/static/assets/JoshPullen.png" />
+    <div class="header__text">
+      <h1 class="header__title">{{ metadata.title }}</h1>
+      <h2 class="header__subtitle">{{ metadata.subtitle }}</h2>
+    </div>
+  </a>
+
+  <section class="sidebar__section">
+    <h3 class="sidebar__header">Things I've Made</h3>
+    <ul>
+      <li><a href="https://www.rocketspelling.com/">Rocket Spelling</a></li>
+      <li><a href="http://thirdgrademathgames.com/">Third Grade Math Games</a></li>
+      <li><a href="https://www.onlinemathleague.com/">Online Math League</a></li>
+      <li>
+        <a href="https://youtube.com/PullJosh/">Youtube Tutorials</a>
+        <ul>
+          <li><a href="https://youtu.be/ytBv2-FJ6xc">Creating a Scratch Platformer</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://scratch.mit.edu/users/PullJosh/">Scratch Projects</a>
+        <ul>
+          <li><a href="https://scratch.mit.edu/projects/60921860/">Piece of Cake</a></li>
+          <li><a href="https://scratch.mit.edu/projects/128408012/">Elf Run</a></li>
+          <li><a href="https://scratch.mit.edu/projects/144527565/">Burt's Burger Acquisition Mission</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section class="sidebar__section">
+    <h3 class="sidebar__header">Where to Find Me</h3>
+    <ul>
+      <li><a href="https://github.com/PullJosh/">Github</a></li>
+      <li><a href="https://twitter.com/PullJosh/">Twitter</a></li>
+      <li><a href="https://youtube.com/PullJosh/">Youtube</a></li>
+      <li><a href="https://scratch.mit.edu/users/PullJosh/">Scratch</a></li>
+    </ul>
+  </section>
+
+  <section class="sidebar__section">
+    <h3 class="sidebar__header">Contact Me</h3>
+    {% include "components/form.njk" %}
+  </section>
+</div>
