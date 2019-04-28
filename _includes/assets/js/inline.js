@@ -7,3 +7,9 @@ if (window.netlifyIdentity) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.header__hamburger').addEventListener('click', e => {
+    document.querySelector('.sidebar').classList.toggle('sidebar--open');
+  });
+});

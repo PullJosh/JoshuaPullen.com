@@ -7,7 +7,9 @@
     {% include "components/sidebar.njk" %}
 
     <main class="page">
-      {{ layoutContent | safe }}
+      <div class="page__content">
+        {{ layoutContent | safe }}
+      </div>
     </main>
 
   </body>
