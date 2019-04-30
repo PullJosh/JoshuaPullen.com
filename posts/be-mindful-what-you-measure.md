@@ -16,7 +16,8 @@ tags:
 ---
 When you measure something, you change it.
 
-> **[Observer Effect](https://en.wikipedia.org/wiki/Observer_effect_(physics)):**  
+> **[Observer Effect](https://en.wikipedia.org/wiki/Observer_effect_(physics)):**
+> 
 > "In physics, the observer effect is the theory that the mere observation of a situation or phenomenon inevitably changes that phenomenon."
 
 Quantum physics are pretty weird, but it turns out that humans are weird in much the same way. Who knew?
@@ -47,8 +48,10 @@ We encourage what we measure, so we have to be sure that we're measuring the rig
 
 Fortunately, this measurement effect can be weaponized for good too. That's why [Discourse](https://www.discourse.org/) displays the amount of time a user has spent reading, not how much they have written:
 
-> "Printing a post count number next to every user's name implies that the more you post, the better things are. [...] *Is this even true?*  
-> I find that the value of conversations has little to do with how much people are talking. I find that too much talking has a *negative* effect on conversations."  
+> "Printing a post count number next to every user's name implies that the more you post, the better things are. [...] *Is this even true?*
+>
+> I find that the value of conversations has little to do with how much people are talking. I find that too much talking has a *negative* effect on conversations."
+>
 > \- [Jeff Atwood (Coding Horror)](https://blog.codinghorror.com/because-reading-is-fundamental-2/)
 
 Instead, by measuring time spent reading, the system encourages people to read more. It's not complicated, but — as is often the case with simple things — it's [startlingly effective](https://blog.codinghorror.com/for-a-bit-of-colored-ribbon/).
