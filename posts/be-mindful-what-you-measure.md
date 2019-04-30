@@ -36,14 +36,15 @@ It's no secret that schools, if they want to do a "good" job (according to the m
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 On my best days, I write negative code. But if you want me to make that number big, it's an easy game to play:
-```
+
+```
 if (
   true
 )
 {
   console.log('6 lines already! 🎉 Am I a rockstar developer?')
 }
-```
+```
 We encourage what we measure, so we have to be sure that we're measuring the right thing.
 
 Fortunately, this measurement effect can be weaponized for good too. That's why [Discourse](https://www.discourse.org/) displays the amount of time a user has spent reading, not how much they have written:

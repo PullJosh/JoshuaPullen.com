@@ -136,6 +136,11 @@ a:hover {
   padding: 1px 8px;
   margin: -2px -4px;
 }
+.post pre > code {
+  display: block;
+  padding: 16px;
+  border-radius: 4px;
+}
 
 .contactForm__label {
   display: block;
