@@ -1,0 +1,331 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --gap: 32px;
+  --radius: 16px;
+  
+  --sidebarWidth: 320px;
+  --navbarHeight: 96px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 2fr 1fr;
+  grid-template-rows: 100vh auto;
+  grid-template-areas:
+    "sidebar content tweets"
+    ". content .";
+  
+  max-width: 1900px;
+  margin: 0 auto;
+  
+  background: #21252b;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+.content {
+  grid-area: content;
+  padding: var(--gap);
+  padding-left: 0;
+}
+.content h2 {
+  margin-top: 0;
+  margin-bottom: 0.7em;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.tweets {
+  grid-area: tweets;
+  margin: var(--gap);
+  margin-left: 0;
+  border-radius: var(--radius);
+  background: #313640;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  overflow: overlay;
+  
+  position: sticky;
+  top: var(--gap);
+}
+
+.tweets::-webkit-scrollbar {
+  width: var(--radius);
+  display: none;
+  background: transparent;
+}
+.tweets::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tweets::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 4px solid #313640;
+  border-radius: 999px;
+}
+.tweets:hover::-webkit-scrollbar {
+  display: block;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  z-index: 8000;
+  width: var(--sidebarWidth);
+  padding: var(--gap);
+  
+  position: sticky;
+  top: 0;
+}
+
+.bio {
+  position: relative;
+  margin-bottom: 48px;
+  text-decoration: none;
+}
+.bio::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: -400px;
+  right: 16px;
+  bottom: -24px;
+  border-radius: calc(var(--radius) * 2);
+  background: #171a1f;
+}
+.bio__logo {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  transform-origin: bottom left;
+  transition: 150ms ease-in-out;
+}
+.bio:hover .bio__logo {
+  transform: scale(1.05);
+}
+.bio__name {
+  position: relative;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+.bio__username {
+  display: block;
+  position: relative;
+  color: #d5dae3;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+}
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  background: black;
+}
+.social__link--github {
+  background: #454c57;
+}
+.social__link--twitter {
+  background: #1da1f2;
+}
+.social__link--youtube {
+  background: #d10d2d;
+}
+.social__icon {
+  margin-right: 8px;
+  width: 24px;
+}
+
+.sidebar__footer {
+  margin: 0 auto;
+  margin-top: auto;
+  font-size: 16px;
+  font-family: monospace;
+  color: #656b75;
+  user-select: none;
+  cursor: url(images/smile-cursor.png) 8 8, auto;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--gap);
+  max-width: 1020px;
+}
+
+.project {
+  display: grid;
+  grid-template-areas:
+    "image text"
+    "cta text";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-gap: var(--gap);
+  padding: var(--gap);
+  margin: 0 auto;
+  position: relative;
+  background: #313640;
+  border-radius: var(--radius);
+  border-top-left-radius: calc(var(--radius) + var(--gap));
+  border-bottom-right-radius: calc(var(--radius) + var(--gap));
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.project__image {
+  position: relative;
+  grid-area: image;
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+.project__text {
+  position: relative;
+  grid-area: text;
+  color: #b3b9c4;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.project__title {
+  color: #fff;
+  font-family: monospace;
+  font-size: 36px;
+  margin: 0;
+}
+.project__title::after {
+  content: '';
+  display: block;
+  margin-top: 0.25em;
+  width: 80px;
+  height: 4px;
+  background: #4561eb;
+  box-shadow: 0 1px 4px rgba(69, 97, 235, 0.15);
+  border-radius: 999px;
+}
+.project__cta {
+  grid-area: cta;
+  position: relative;
+  text-align: right;
+}
+.project__button {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 22px;
+  font-family: monospace;
+  text-decoration: none;
+  background: #4561eb;
+  box-shadow: 0 4px 8px rgba(69, 97, 235, 0.2);
+}
+
+.project__text a {
+  color: #5d76f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+.project__text a:hover {
+  color: #4561eb;
+}
+.project__text a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #4561eb;
+  padding: 4px 6px;
+  margin: -4px -6px;
+  position: relative;
+  background: rgba(69, 97, 235, 0.2);
+}
+
+@media (min-width: 1950px) {
+  .bio::before {
+    left: calc(-1 * var(--gap));
+  }
+}
+
+@media (max-width: 1600px) {
+  .tweets {
+    display: none;
+  }
+  body {
+    grid-template-areas:
+      "sidebar content content"
+      ". content content"
+  }
+}
+
+@media (max-width: 1100px) {
+  .project {
+    grid-template-areas:
+      "image "
+      "text"
+      "cta";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "sidebar"
+      "content";
+  }
+  .content {
+    padding-left: var(--gap);
+  }
+  .sidebar {
+    position: static;
+    width: auto;
+  }
+  .bio {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 96px auto;
+    grid-template-areas:
+      "logo name"
+      "logo username";
+    column-gap: var(--gap);
+  }
+  .bio__logo {
+    grid-area: logo;
+    margin: 0;
+  }
+  .bio__name {
+    grid-area: name;
+    align-self: end;
+  }
+  .bio__username {
+    grid-area: username;
+  }
+  .bio::before {
+    display: none;
+  }
+  .sidebar__footer {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .bio {
+    display: block;
+  }
+  .bio__logo {
+    max-width: 96px;
+  }
+}
